@@ -1,11 +1,10 @@
 package com.design_patterns;
 
-import com.design_patterns.adapter_pattern.PayPalGateway;
-import com.design_patterns.adapter_pattern.PayPalPaymentAdapter;
-import com.design_patterns.adapter_pattern.PaymentClient;
-import com.design_patterns.adapter_pattern.PaymentService;
-import com.design_patterns.adapter_pattern.RazorPayGateway;
-import com.design_patterns.adapter_pattern.RazorPayPaymentAdapter;
+import com.design_patterns.decorater_pattern.Coffee;
+import com.design_patterns.decorater_pattern.MilkDecorator;
+import com.design_patterns.decorater_pattern.SimpleCoffee;
+import com.design_patterns.decorater_pattern.SugarDecorator;
+import com.design_patterns.decorater_pattern.WhippedCreamDecorator;
 
 public class Main {
 
@@ -77,13 +76,21 @@ public class Main {
         // System.out.println("Total Time Taken" + (endTime-startTime));
 
         // -> Adapter Design Pattern
-        PaymentService paymentService = new PayPalPaymentAdapter(new PayPalGateway());
-        PaymentClient paymentClient = new PaymentClient(paymentService); 
-        paymentClient.makePayment();
+        // PaymentService paymentService = new PayPalPaymentAdapter(new PayPalGateway());
+        // PaymentClient paymentClient = new PaymentClient(paymentService); 
+        // paymentClient.makePayment();
 
-        PaymentService paymentService1 = new RazorPayPaymentAdapter(new RazorPayGateway());
-        PaymentClient paymentClient1 = new PaymentClient(paymentService1); 
-        paymentClient1.makePayment();
+        // PaymentService paymentService1 = new RazorPayPaymentAdapter(new RazorPayGateway());
+        // PaymentClient paymentClient1 = new PaymentClient(paymentService1); 
+        // paymentClient1.makePayment();
+
+        // -> Decorater Design Pattern
+        Coffee coffee = new SimpleCoffee();
+        coffee = new MilkDecorator(coffee);
+        coffee = new SugarDecorator(coffee);
+        coffee = new WhippedCreamDecorator(coffee);
+        System.out.println(coffee.getDescription());
+        System.out.println(coffee.getCost());
     }
 
 }

@@ -7,6 +7,12 @@ E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\EmailService.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\User.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\UserService.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\Coffee.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\CoffeeDecorator.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\MilkDecorator.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\SimpleCoffee.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\SugarDecorator.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\WhippedCreamDecorator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_pattern\abstract_factory_pattern\EmailFactory.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_pattern\abstract_factory_pattern\EmailNotification.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_pattern\abstract_factory_pattern\EmailTemplate.java
