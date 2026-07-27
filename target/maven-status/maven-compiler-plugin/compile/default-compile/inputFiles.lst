@@ -15,6 +15,8 @@ E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_pattern\simple_factory_pattern\NotificationFactory.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_pattern\simple_factory_pattern\SmsNotification.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\Main.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\prototype_pattern\Cloneable.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\prototype_pattern\GameBotCharacters.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\basic\Calculator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\double_checked_lock_mechanism\Calculator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\lazy_initialization\Calculator.java
