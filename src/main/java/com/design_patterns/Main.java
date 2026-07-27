@@ -1,10 +1,11 @@
 package com.design_patterns;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import com.design_patterns.prototype_pattern.GameBotCharacters;
+import com.design_patterns.adapter_pattern.PayPalGateway;
+import com.design_patterns.adapter_pattern.PayPalPaymentAdapter;
+import com.design_patterns.adapter_pattern.PaymentClient;
+import com.design_patterns.adapter_pattern.PaymentService;
+import com.design_patterns.adapter_pattern.RazorPayGateway;
+import com.design_patterns.adapter_pattern.RazorPayPaymentAdapter;
 
 public class Main {
 
@@ -52,29 +53,37 @@ public class Main {
         // t2.start();
 
         // -> Prototype Design Pattern
-        long startTime = System.currentTimeMillis();
+        // long startTime = System.currentTimeMillis();
 
-        GameBotCharacters gbc1 = new GameBotCharacters("Bot1", 100, 0, new ArrayList<>(Arrays.asList("Rifle")));
-        GameBotCharacters gbc2 = gbc1.customizedClone();
-        gbc2.setName("Bot2");
-        GameBotCharacters gbc3 = gbc1.customizedClone();
-        gbc3.setName("Bot3");
-        GameBotCharacters gbc4 = gbc1.customizedClone();
-        gbc4.setName("Bot4");
-        GameBotCharacters gbc5 = gbc1.customizedClone();
-        gbc5.setName("Bot5");
-        List<String> weapons = gbc5.getWeapons();
-        weapons.add("Sniper");
+        // GameBotCharacters gbc1 = new GameBotCharacters("Bot1", 100, 0, new ArrayList<>(Arrays.asList("Rifle")));
+        // GameBotCharacters gbc2 = gbc1.customizedClone();
+        // gbc2.setName("Bot2");
+        // GameBotCharacters gbc3 = gbc1.customizedClone();
+        // gbc3.setName("Bot3");
+        // GameBotCharacters gbc4 = gbc1.customizedClone();
+        // gbc4.setName("Bot4");
+        // GameBotCharacters gbc5 = gbc1.customizedClone();
+        // gbc5.setName("Bot5");
+        // List<String> weapons = gbc5.getWeapons();
+        // weapons.add("Sniper");
 
-        System.out.println(gbc1);
-        System.out.println(gbc2);
-        System.out.println(gbc3);
-        System.out.println(gbc4);
-        System.out.println(gbc5);
+        // System.out.println(gbc1);
+        // System.out.println(gbc2);
+        // System.out.println(gbc3);
+        // System.out.println(gbc4);
+        // System.out.println(gbc5);
 
-        long endTime = System.currentTimeMillis();
+        // long endTime = System.currentTimeMillis();
+        // System.out.println("Total Time Taken" + (endTime-startTime));
 
-        System.out.println("Total Time Taken" + (endTime-startTime));
+        // -> Adapter Design Pattern
+        PaymentService paymentService = new PayPalPaymentAdapter(new PayPalGateway());
+        PaymentClient paymentClient = new PaymentClient(paymentService); 
+        paymentClient.makePayment();
+
+        PaymentService paymentService1 = new RazorPayPaymentAdapter(new RazorPayGateway());
+        PaymentClient paymentClient1 = new PaymentClient(paymentService1); 
+        paymentClient1.makePayment();
     }
 
 }

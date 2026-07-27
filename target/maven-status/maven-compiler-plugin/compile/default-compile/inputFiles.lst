@@ -1,3 +1,9 @@
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_pattern\PaymentClient.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_pattern\PaymentService.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_pattern\PayPalGateway.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_pattern\PayPalPaymentAdapter.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_pattern\RazorPayGateway.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_pattern\RazorPayPaymentAdapter.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\EmailService.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\User.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\UserService.java
