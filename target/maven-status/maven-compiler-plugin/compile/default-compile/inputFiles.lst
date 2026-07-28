@@ -44,3 +44,13 @@ E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleto
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\double_checked_lock_mechanism\Calculator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\lazy_initialization\Calculator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\thread_safety\Calculator.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\AESEncryption.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\CompressionStrategy.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\EmailNotification.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\EncryptionStrategy.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\GZIPCompression.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\Notification.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\PushNotification.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\RSAEncryption.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\SmsNotification.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\strategy_pattern\ZIPCompression.java

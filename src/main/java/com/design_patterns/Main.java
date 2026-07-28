@@ -1,7 +1,13 @@
 package com.design_patterns;
 
-import com.design_patterns.observer_pattern.Observer;
-import com.design_patterns.observer_pattern.Subject;
+import com.design_patterns.strategy_pattern.AESEncryption;
+import com.design_patterns.strategy_pattern.EmailNotification;
+import com.design_patterns.strategy_pattern.GZIPCompression;
+import com.design_patterns.strategy_pattern.Notification;
+import com.design_patterns.strategy_pattern.PushNotification;
+import com.design_patterns.strategy_pattern.RSAEncryption;
+import com.design_patterns.strategy_pattern.SmsNotification;
+import com.design_patterns.strategy_pattern.ZIPCompression;
 
 public class Main {
 
@@ -114,18 +120,32 @@ public class Main {
         // System.out.println(weather.getWeather());
 
         // -> Observer Design Pattern
-        Observer obs1 = new Observer(1,"Jugal");
-        Observer obs2 = new Observer(2,"Shakshi");
-        Observer obs3 = new Observer(3,"Rajan");
-        Observer obs4 = new Observer(4,"Vaishali");
+        // Observer obs1 = new Observer(1,"Jugal");
+        // Observer obs2 = new Observer(2,"Shakshi");
+        // Observer obs3 = new Observer(3,"Rajan");
+        // Observer obs4 = new Observer(4,"Vaishali");
+        // Subject subject = new Subject();
+        // subject.addObserver(obs1);
+        // subject.addObserver(obs2);
+        // subject.addObserver(obs3);
+        // subject.addObserver(obs4);
+        // subject.uploadVideo("Observer DP", "Observer.mp4");
 
-        Subject subject = new Subject();
-        subject.addObserver(obs1);
-        subject.addObserver(obs2);
-        subject.addObserver(obs3);
-        subject.addObserver(obs4);
+        // -> Strategy Design Pattern
+        Notification email = new EmailNotification(new AESEncryption(), new ZIPCompression());
+        email.encrypt();
+        email.compress();
+        email.send();
 
-        subject.uploadVideo("Observer DP", "Observer.mp4");
+        Notification sms = new SmsNotification(new AESEncryption(), new GZIPCompression());
+        sms.encrypt();
+        sms.compress();
+        sms.send();
+
+        Notification push = new PushNotification(new RSAEncryption(), new ZIPCompression());
+        push.encrypt();
+        push.compress();
+        push.send();
     }
 
 }
