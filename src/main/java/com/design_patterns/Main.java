@@ -1,11 +1,7 @@
 package com.design_patterns;
 
-import com.design_patterns.proxy_pattern.protection_proxy.Database;
-import com.design_patterns.proxy_pattern.protection_proxy.DatabaseProxy;
-import com.design_patterns.proxy_pattern.remote_proxy.Weather;
-import com.design_patterns.proxy_pattern.remote_proxy.WeatherProxyLocal;
-import com.design_patterns.proxy_pattern.virtual_proxy.MovieProxy;
-import com.design_patterns.proxy_pattern.virtual_proxy.Video;
+import com.design_patterns.observer_pattern.Observer;
+import com.design_patterns.observer_pattern.Subject;
 
 public class Main {
 
@@ -95,28 +91,41 @@ public class Main {
 
         // -> Proxy Design Pattern
         // Virtual Proxy
-        Video video1 = new MovieProxy("Dhamal.mp4");
-        Video video2 = new MovieProxy("Golmaal.mp4");
-        Video video3 = new MovieProxy("Welcome.mp4");
-        try {
-            video1.play();
-            video2.play();
-            video3.play();
-            video1.play();
-            video2.play();
-            video3.play();
-        } catch (InterruptedException ex) {
-            System.err.println(ex);
-        }
+        // Video video1 = new MovieProxy("Dhamal.mp4");
+        // Video video2 = new MovieProxy("Golmaal.mp4");
+        // Video video3 = new MovieProxy("Welcome.mp4");
+        // try {
+        //     video1.play();
+        //     video2.play();
+        //     video3.play();
+        //     video1.play();
+        //     video2.play();
+        //     video3.play();
+        // } catch (InterruptedException ex) {
+        //     System.err.println(ex);
+        // }
 
         // Protected Proxy
-        Database db = new DatabaseProxy("MANAGER");
-        db.delete();
+        // Database db = new DatabaseProxy("MANAGER");
+        // db.delete();
 
         // Remote Proxy
-        Weather weather = new WeatherProxyLocal();
-        System.out.println(weather.getWeather());
+        // Weather weather = new WeatherProxyLocal();
+        // System.out.println(weather.getWeather());
 
+        // -> Observer Design Pattern
+        Observer obs1 = new Observer(1,"Jugal");
+        Observer obs2 = new Observer(2,"Shakshi");
+        Observer obs3 = new Observer(3,"Rajan");
+        Observer obs4 = new Observer(4,"Vaishali");
+
+        Subject subject = new Subject();
+        subject.addObserver(obs1);
+        subject.addObserver(obs2);
+        subject.addObserver(obs3);
+        subject.addObserver(obs4);
+
+        subject.uploadVideo("Observer DP", "Observer.mp4");
     }
 
 }

@@ -27,6 +27,8 @@ E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_pattern\simple_factory_pattern\NotificationFactory.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_pattern\simple_factory_pattern\SmsNotification.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\Main.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\observer_pattern\Observer.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\observer_pattern\Subject.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\prototype_pattern\Cloneable.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\prototype_pattern\GameBotCharacters.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\protection_proxy\Database.java
