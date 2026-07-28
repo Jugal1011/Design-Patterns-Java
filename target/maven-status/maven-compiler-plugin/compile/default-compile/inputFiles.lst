@@ -7,6 +7,12 @@ E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\adapter_
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\EmailService.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\User.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\builder_pattern\UserService.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\chain_of_responsibility\ChatbotHandler.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\chain_of_responsibility\Client.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\chain_of_responsibility\CustomerExecutiveHandler.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\chain_of_responsibility\Issue.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\chain_of_responsibility\RequestHandler.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\chain_of_responsibility\TechnicalTeamHandler.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\Coffee.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\CoffeeDecorator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\decorater_pattern\MilkDecorator.java

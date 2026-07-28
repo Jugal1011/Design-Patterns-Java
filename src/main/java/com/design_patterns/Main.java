@@ -1,13 +1,10 @@
 package com.design_patterns;
 
-import com.design_patterns.strategy_pattern.AESEncryption;
-import com.design_patterns.strategy_pattern.EmailNotification;
-import com.design_patterns.strategy_pattern.GZIPCompression;
-import com.design_patterns.strategy_pattern.Notification;
-import com.design_patterns.strategy_pattern.PushNotification;
-import com.design_patterns.strategy_pattern.RSAEncryption;
-import com.design_patterns.strategy_pattern.SmsNotification;
-import com.design_patterns.strategy_pattern.ZIPCompression;
+import com.design_patterns.chain_of_responsibility.ChatbotHandler;
+import com.design_patterns.chain_of_responsibility.Client;
+import com.design_patterns.chain_of_responsibility.CustomerExecutiveHandler;
+import com.design_patterns.chain_of_responsibility.Issue;
+import com.design_patterns.chain_of_responsibility.TechnicalTeamHandler;
 
 public class Main {
 
@@ -132,20 +129,22 @@ public class Main {
         // subject.uploadVideo("Observer DP", "Observer.mp4");
 
         // -> Strategy Design Pattern
-        Notification email = new EmailNotification(new AESEncryption(), new ZIPCompression());
-        email.encrypt();
-        email.compress();
-        email.send();
+        // Notification email = new EmailNotification(new AESEncryption(), new ZIPCompression());
+        // email.encrypt();
+        // email.compress();
+        // email.send();
+        // Notification sms = new SmsNotification(new AESEncryption(), new GZIPCompression());
+        // sms.encrypt();
+        // sms.compress();
+        // sms.send();
+        // Notification push = new PushNotification(new RSAEncryption(), new ZIPCompression());
+        // push.encrypt();
+        // push.compress();
+        // push.send();
 
-        Notification sms = new SmsNotification(new AESEncryption(), new GZIPCompression());
-        sms.encrypt();
-        sms.compress();
-        sms.send();
-
-        Notification push = new PushNotification(new RSAEncryption(), new ZIPCompression());
-        push.encrypt();
-        push.compress();
-        push.send();
+        // -> Chain Of Reponsibility
+        Client client = new Client(new ChatbotHandler(new CustomerExecutiveHandler(new TechnicalTeamHandler())));
+        client.raiseIssue(new Issue(2, "INITIATED"));
     }
 
 }
