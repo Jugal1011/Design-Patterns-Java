@@ -1,48 +1,228 @@
-### Folder-by-Folder Code & Pattern Summary
+# ☕ Java Design Patterns Repository
 
-#### 1. Adapter Pattern (`com.design_patterns.adapter_pattern`)
-* **Description:** Bridges incompatible interfaces so third-party classes can work with existing client code.
-* **Code Example:** The repository integrates third-party SDKs (`PayPalGateway`, `RazorPayGateway`) into a unified `PaymentService` interface using `PayPalPaymentAdapter` and `RazorPayPaymentAdapter`, allowing `PaymentClient` to execute payments uniformly.
+Welcome to the **Design-Patterns-Java** repository! This project provides structured, real-world implementations of classic **Object-Oriented Design Patterns** in Java.
 
-#### 2. Builder Pattern (`com.design_patterns.builder_pattern`)
-* **Description:** Constructs complex objects step-by-step using a fluent interface, avoiding telescoping constructors.
-* **Code Example:** `User` instances with multiple optional parameters are fluently built via `UserBuilder` and consumed by `UserService` and `EmailService`.
+All design patterns in this repository are executed from a single entry point: **`src/main/java/com/design_patterns/Main.java`**. The runner code for each pattern is organized into commented-out code blocks in `Main.java`, allowing developers to easily uncomment and execute specific patterns.
 
-#### 3. Chain of Responsibility (`com.design_patterns.chain_of_responsibility`)
-* **Description:** Decouples request senders from receivers by passing requests along a sequential chain of handlers.
-* **Code Example:** Support `Issue` objects are evaluated and escalated sequentially through `ChatbotHandler` $\rightarrow$ `CustomerExecutiveHandler` $\rightarrow$ `TechnicalTeamHandler`.
+---
 
-#### 4. Decorator Pattern (`com.design_patterns.decorater_pattern`)
-* **Category:** Structural
-* **Description:** Dynamically adds new behaviors or responsibilities to an object at runtime without subclassing.
-* **Code Example:** A base `SimpleCoffee` object is wrapped with ingredient decorators (`MilkDecorator`, `SugarDecorator`, `WhippedCreamDecorator`) to dynamically compute cost and description.
+## 🛠️ Repository Architecture & Tech Stack
 
-#### 5. Factory Pattern (`com.design_patterns.factory_pattern`)
-* **Description:** Encapsulates object instantiation logic, allowing the program to choose concrete classes dynamically.
-* **Code Example:** Structured into two sub-folders: `simple_factory_pattern` (conditional object creation) and `abstract_factory_pattern` (factories producing related families of objects).
+- **Language:** Java 17+
+- **Build Tool:** Apache Maven (`pom.xml`)
+- **Base Package:** `com.design_patterns`
+- **Main Entry Point:** `src/main/java/com/design_patterns/Main.java`
 
-#### 6. Observer Pattern (`com.design_patterns.observer_pattern`)
-* **Description:** Implements a publish-subscribe subscription mechanism to notify multiple objects whenever a state change occurs.
-* **Code Example:** A `Subject` maintains a list of `Observer` subscribers and broadcasts event state updates across all registered listeners.
+---
 
-#### 7. Prototype Pattern (`com.design_patterns.prototype_pattern`)
-* **Description:** Creates new objects by copying/cloning existing prototype instances rather than creating them from scratch.
-* **Code Example:** Implements a custom `Cloneable` interface in `GameBotCharacters` to duplicate game bots efficiently.
+## 📁 Directory Structure
 
-#### 8. Proxy Pattern (`com.design_patterns.proxy_pattern`)
-* **Description:** Serves as a surrogate or placeholder to control access, lazy loading, or remote calls to an underlying object.
-* **Code Example:** Divided into three functional implementations:
-  * `protection_proxy`: Enforces role-based access control.
-  * `remote_proxy`: Simulates network communication boundaries.
-  * `virtual_proxy`: Delays heavy object instantiation until needed (lazy loading).
+```
+src/main/java/com/design_patterns/
+├── Main.java                        # 🚀 Central Runner (Toggle pattern execution)
+├── 🔌 adapter_pattern/              # Structural: Payment Gateway Integration
+├── 🏗️ builder_pattern/              # Creational: Fluent User Profile Construction
+├── 🔗 chain_of_responsibility/      # Behavioral: Multi-Tier Support Ticket Escalation
+├── ☕ decorater_pattern/            # Structural: Dynamic Coffee Toppings Customization
+├── 🏭 factory_pattern/              # Creational: Simple & Abstract Object Instantiation
+│   ├── abstract_factory_pattern/
+│   └── simple_factory_pattern/
+├── 🔔 observer_pattern/             # Behavioral: Event Listener & Subscriber System
+├── 🐑 prototype_pattern/            # Creational: Game Character Object Cloning
+├── 🛡️ proxy_pattern/                # Structural: Protection, Virtual & Remote Proxies
+│   ├── protection_proxy/
+│   ├── remote_proxy/
+│   └── virtual_proxy/
+├── 🔒 singleton_pattern/            # Creational: Single Instance Implementation Strategies
+│   ├── basic/
+│   ├── double_checked_lock_mechanism/
+│   ├── lazy_initialization/
+│   └── thread_safety/
+└── 🎯 strategy_pattern/             # Behavioral: Dynamic Strategy Execution
+```
 
-#### 9. Singleton Pattern (`com.design_patterns.singleton_pattern`)
-* **Description:** Ensures a class has only one global instance throughout the application lifecycle.
-* **Code Example:** Demonstrates four evolutionary approaches across sub-folders: `basic`, `lazy_initialization`, `thread_safety`, and `double_checked_lock_mechanism` (using `volatile` and synchronized blocks).
+---
 
-#### 10. Strategy Pattern (`com.design_patterns.strategy_pattern`)
-* **Description:** Defines a family of algorithms, encapsulates each one, and makes them interchangeable at runtime.
-* **Code Example:** Demonstrates dynamic strategy switching for three domain models:
-  * **Notifications:** `EmailNotification`, `SmsNotification`, `PushNotification`.
-  * **Encryption:** `AESEncryption`, `RSAEncryption`.
-  * **Compression:** `ZIPCompression`, `GZIPCompression`.
+## 🚀 How to Run Code via `Main.java`
+
+`Main.java` contains individual driver blocks for each design pattern. Simply uncomment the block for the pattern you want to run, compile, and execute!
+
+### 1️⃣ Open `Main.java`
+Navigate to `src/main/java/com/design_patterns/Main.java`.
+
+### 2️⃣ Uncomment the Pattern Code Block
+Uncomment the section corresponding to the design pattern you wish to execute.
+
+
+### 3️⃣ Build & Execute via Maven
+Run the project using Maven from your terminal:
+
+```bash
+# Clean and compile the codebase
+mvn clean compile
+
+# Execute the Main class
+mvn exec:java -Dexec.mainClass="com.design_patterns.Main"
+```
+
+---
+
+## 📚 Pattern Summaries & Code Snippets for `Main.java`
+
+---
+
+### 1. 🔌 Adapter Pattern
+* **Folder:** `src/main/java/com/design_patterns/adapter_pattern/`
+* **Pattern Type:** Structural
+* **Overview:** Adapts third-party payment gateways (`PayPalGateway`, `RazorPayGateway`) to conform to a common `PaymentService` interface.
+* **Snippet for `Main.java`:**
+  ```java
+  PaymentService paypalAdapter = new PayPalPaymentAdapter(new PayPalGateway());
+  paypalAdapter.processPayment(250.00);
+
+  PaymentService razorPayAdapter = new RazorPayPaymentAdapter(new RazorPayGateway());
+  razorPayAdapter.processPayment(500.00);
+  ```
+
+---
+
+### 2. 🏗️ Builder Pattern
+* **Folder:** `src/main/java/com/design_patterns/builder_pattern/`
+* **Pattern Type:** Creational
+* **Overview:** Constructs complex `User` objects fluently without requiring large, multi-parameter constructors.
+* **Snippet for `Main.java`:**
+  ```java
+  User user = new UserBuilder()
+      .setFirstName("Alice")
+      .setLastName("Smith")
+      .setEmail("alice@example.com")
+      .setAge(28)
+      .build();
+  System.out.println("User created: " + user.getFirstName());
+  ```
+
+---
+
+### 3. 🔗 Chain of Responsibility Pattern
+* **Folder:** `src/main/java/com/design_patterns/chain_of_responsibility/`
+* **Pattern Type:** Behavioral
+* **Overview:** Passes customer service tickets through a sequential handler chain (`Chatbot -> Executive -> TechTeam`) until resolved.
+* **Snippet for `Main.java`:**
+  ```java
+  RequestHandler chatbot = new ChatbotHandler();
+  RequestHandler executive = new CustomerExecutiveHandler();
+  RequestHandler techTeam = new TechnicalTeamHandler();
+
+  chatbot.setNextHandler(executive);
+  executive.setNextHandler(techTeam);
+
+  chatbot.handleRequest(new Issue("Password reset", Severity.LOW));
+  chatbot.handleRequest(new Issue("System outage", Severity.CRITICAL));
+  ```
+
+---
+
+### 4. ☕ Decorator Pattern
+* **Folder:** `src/main/java/com/design_patterns/decorater_pattern/`
+* **Pattern Type:** Structural
+* **Overview:** Dynamically stacks beverage toppings onto a base `SimpleCoffee` instance at runtime.
+* **Snippet for `Main.java`:**
+  ```java
+  Coffee coffee = new SimpleCoffee();
+  coffee = new MilkDecorator(coffee);
+  coffee = new SugarDecorator(coffee);
+  coffee = new WhippedCreamDecorator(coffee);
+
+  System.out.println("Order: " + coffee.getDescription());
+  System.out.println("Total: $" + coffee.getCost());
+  ```
+
+---
+
+### 5. 🏭 Factory Pattern (Simple & Abstract)
+* **Folder:** `src/main/java/com/design_patterns/factory_pattern/`
+* **Pattern Type:** Creational
+* **Overview:** Encapsulates object creation logic, decoupling client calls from concrete class instantiations.
+* **Snippet for `Main.java`:**
+  ```java
+  PaymentFactory factory = new PaymentFactory();
+  PaymentMethod payment = factory.getPaymentMethod("CREDIT_CARD");
+  payment.pay(120.00);
+  ```
+
+---
+
+### 6. 🔔 Observer Pattern
+* **Folder:** `src/main/java/com/design_patterns/observer_pattern/`
+* **Pattern Type:** Behavioral
+* **Overview:** Subscribes observer objects to a `Subject` so they receive automatic notifications upon state changes.
+* **Snippet for `Main.java`:**
+  ```java
+  Subject publisher = new ConcreteSubject();
+  Observer subscriber1 = new UserObserver("User1");
+  publisher.attach(subscriber1);
+  publisher.setState("New Article Published!");
+  ```
+
+---
+
+### 7. 🐑 Prototype Pattern
+* **Folder:** `src/main/java/com/design_patterns/prototype_pattern/`
+* **Pattern Type:** Creational
+* **Overview:** Clones pre-configured `GameBotCharacters` instances quickly without running full constructor routines.
+* **Snippet for `Main.java`:**
+  ```java
+  GameBotCharacters botTemplate = new GameBotCharacters("WarriorBot", 100, 50);
+  GameBotCharacters clonedBot = botTemplate.clone();
+  ```
+
+---
+
+### 8. 🛡️ Proxy Pattern
+* **Folder:** `src/main/java/com/design_patterns/prototype_pattern/`
+* **Pattern Type:** Structural
+* **Overview:** Intercepts method calls to manage access control (`protection_proxy`), deferred instantiation (`virtual_proxy`), or network endpoints (`remote_proxy`).
+* **Snippet for `Main.java`:**
+  ```java
+  // Protection Proxy Demo
+  DatabaseAccess proxy = new ProtectionProxy("ADMIN");
+  proxy.executeQuery("DELETE FROM users");
+  ```
+
+---
+
+### 9. 🔒 Singleton Pattern
+* **Folder:** `src/main/java/com/design_patterns/singleton_pattern/`
+* **Pattern Type:** Creational
+* **Overview:** Guarantees that only one instance of a class exists across the application runtime.
+* **Snippet for `Main.java`:**
+  ```java
+  DoubleCheckedSingleton singleton = DoubleCheckedSingleton.getInstance();
+  ```
+
+---
+
+### 10. 🎯 Strategy Pattern
+* **Folder:** `src/main/java/com/design_patterns/strategy_pattern/`
+* **Pattern Type:** Behavioral
+* **Overview:** Swaps algorithms dynamically at runtime for notifications, encryption, and compression.
+* **Snippet for `Main.java`:**
+  ```java
+  CompressionContext compression = new CompressionContext();
+  compression.setStrategy(new ZIPCompression());
+  compression.compress("data.txt");
+
+  compression.setStrategy(new GZIPCompression());
+  compression.compress("data.txt");
+  ```
+
+---
+
+## 💡 Core Benefits
+
+- **⚡ Centralized Execution:** Test any pattern instantly by toggling code blocks in `Main.java` [5].
+- **🔌 Loose Coupling:** High dependency inversion using interfaces.
+- **🧱 Reusable & Scalable:** Clean adherence to OOP principles.
+
+---
+*Maintained by [Jugal1011](https://github.com/Jugal1011).*
