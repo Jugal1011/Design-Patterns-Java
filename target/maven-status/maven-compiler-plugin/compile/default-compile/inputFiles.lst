@@ -29,6 +29,15 @@ E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\factory_
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\Main.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\prototype_pattern\Cloneable.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\prototype_pattern\GameBotCharacters.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\protection_proxy\Database.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\protection_proxy\DatabaseProxy.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\protection_proxy\MySqlDatabase.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\remote_proxy\Weather.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\remote_proxy\WeatherProxyLocal.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\remote_proxy\WeatherServiceServer.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\virtual_proxy\Movie.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\virtual_proxy\MovieProxy.java
+E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\proxy_pattern\virtual_proxy\Video.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\basic\Calculator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\double_checked_lock_mechanism\Calculator.java
 E:\Java Projects\Design-Patterns-Java\src\main\java\com\design_patterns\singleton_pattern\lazy_initialization\Calculator.java

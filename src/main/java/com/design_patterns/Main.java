@@ -1,10 +1,11 @@
 package com.design_patterns;
 
-import com.design_patterns.decorater_pattern.Coffee;
-import com.design_patterns.decorater_pattern.MilkDecorator;
-import com.design_patterns.decorater_pattern.SimpleCoffee;
-import com.design_patterns.decorater_pattern.SugarDecorator;
-import com.design_patterns.decorater_pattern.WhippedCreamDecorator;
+import com.design_patterns.proxy_pattern.protection_proxy.Database;
+import com.design_patterns.proxy_pattern.protection_proxy.DatabaseProxy;
+import com.design_patterns.proxy_pattern.remote_proxy.Weather;
+import com.design_patterns.proxy_pattern.remote_proxy.WeatherProxyLocal;
+import com.design_patterns.proxy_pattern.virtual_proxy.MovieProxy;
+import com.design_patterns.proxy_pattern.virtual_proxy.Video;
 
 public class Main {
 
@@ -85,12 +86,37 @@ public class Main {
         // paymentClient1.makePayment();
 
         // -> Decorater Design Pattern
-        Coffee coffee = new SimpleCoffee();
-        coffee = new MilkDecorator(coffee);
-        coffee = new SugarDecorator(coffee);
-        coffee = new WhippedCreamDecorator(coffee);
-        System.out.println(coffee.getDescription());
-        System.out.println(coffee.getCost());
+        // Coffee coffee = new SimpleCoffee();
+        // coffee = new MilkDecorator(coffee);
+        // coffee = new SugarDecorator(coffee);
+        // coffee = new WhippedCreamDecorator(coffee);
+        // System.out.println(coffee.getDescription());
+        // System.out.println(coffee.getCost());
+
+        // -> Proxy Design Pattern
+        // Virtual Proxy
+        Video video1 = new MovieProxy("Dhamal.mp4");
+        Video video2 = new MovieProxy("Golmaal.mp4");
+        Video video3 = new MovieProxy("Welcome.mp4");
+        try {
+            video1.play();
+            video2.play();
+            video3.play();
+            video1.play();
+            video2.play();
+            video3.play();
+        } catch (InterruptedException ex) {
+            System.err.println(ex);
+        }
+
+        // Protected Proxy
+        Database db = new DatabaseProxy("MANAGER");
+        db.delete();
+
+        // Remote Proxy
+        Weather weather = new WeatherProxyLocal();
+        System.out.println(weather.getWeather());
+
     }
 
 }
